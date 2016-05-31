@@ -5,10 +5,8 @@
 | Application Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
+|Aca se encuentran las rutas que maneja laravel para poder realizar la navegacion 
+|entre las vistas y poder hacer uso de las funcionalidades de la aplicacion.
 */
 
 Route::get('/', function(){
