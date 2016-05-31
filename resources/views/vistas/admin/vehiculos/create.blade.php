@@ -5,7 +5,7 @@
 @section('content')
 	
 	
-	{!! Form::open(['route' => 'admin.vehiculos.store', 'method' => 'POST']) !!}
+	{!! Form::open(['route' => 'admin.vehiculos.store', 'method' => 'POST', 'files' => true]) !!}
 
 	@if(count($errors) > 0)
 		<div class="alert alert-danger">

@@ -23,6 +23,13 @@ class RentasController extends Controller
         return view('vistas.admin.rentas.index')->with('solicitud_renta', $solicitud_renta);
     }
 
+
+    public function rentasIndex(){
+        $usuario = User::where('usuario',  $_COOKIE['name'] )->first();
+        $solicitud_renta = solicitud_renta::where('licencia_user', $usuario->numero_licencia)->orderBy('id', 'ASC')->paginate(8);
+        return view('vistas.cliente.rentas.index')->with('solicitud_renta', $solicitud_renta);
+    }
+
     public function create($id){
     	$vehiculo = vehiculo::find($id);
     	return view('vistas.admin.rentas.create')->with('vehiculo', $vehiculo);

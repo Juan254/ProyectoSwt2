@@ -1,4 +1,4 @@
-@extends('vistas.admin.inicioUsuario')
+@extends('vistas.cliente.inicioUsuario')
 
 @section('titulo', 'vehiculo con placa:'. $vehiculo->placa)
 
@@ -6,53 +6,59 @@
 	
 <br>
 <h2>
-	{!! Form::label ('vehiculo con placa:'. $vehiculo->placa) !!}
+	{!! Form::label ('Información del vehiculo con placa: '. $vehiculo->placa) !!}
 </h2>
 <br>
 
 <br>
-
-	<tbody>
-		
-            <h2>
-                Nombre del carro
-            </h2>
-            <div class="infoCarro">
-                <img class="foto" >
-
-                <div class="descripcion">
-                    Información: 
-                    <br />
-                    {!! Form::label ('Marca del vehiculo: '. $vehiculo->marca) !!}
-                    <br />
-                    {!! Form::label ('Capacidad del vehiculo: '. $vehiculo->capacidad) !!}
-                    <br />
-                    {!! Form::label ('Precio por hora: '. $vehiculo->precio_hora) !!}
-                    <br />
-                     {!! Form::label ('Color del vehiculo: '. $vehiculo->color) !!}
-                    <br />
-                     {!! Form::label ('Modelo del vehiculo: '. $vehiculo->modelo) !!}
-                    <br />
-                     {!! Form::label ('Placa del vehiculo: '. $vehiculo->placa) !!}
-                    <br />
-                    {!! Form::label ('Kilometraje del vehiculo: '. $vehiculo->kilometraje) !!}
-                    <br />
-                    Disponible:
-                    @if( $vehiculo->disponibilidad == 1)
-						{!! Form::label ('No disponible') !!}
-					@else
-						{!! Form::label ('disponible') !!}
-					@endif
-                    
-                </div>
-
-            </div>
-            <button type="submit" class="botonRentar">Rentar</button>
-		
-	</tbody>
-
+    <table>
+	   <tbody>
+        
+                    <tr>
+                        <img src='{{ asset ("images/vehiculos/$vehiculo->id.png")}}' >
+                    </tr>
+                    <tr>
+                        <td><strong>{!! Form::label ('Marca del vehiculo:') !!}</strong></td>
+                        <td><strong>{!! Form::label ($vehiculo->marca) !!}</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>{!! Form::label ('Capacidad del vehiculo:') !!}</strong></td>
+                        <td><strong>{!! Form::label ( $vehiculo->capacidad) !!}</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>{!! Form::label ('Precio por hora del vehiculo:') !!}</strong></td>
+                        <td><strong>{!! Form::label ($vehiculo->precio_hora) !!}</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>{!! Form::label ('Color del vehiculo:') !!}</strong></td>
+                        <td><strong>{!! Form::label ($vehiculo->color) !!}</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>{!! Form::label ('Modelo del vehiculo:') !!}</strong></td>
+                        <td><strong>{!! Form::label ($vehiculo->modelo) !!}</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>{!! Form::label ('Placa del vehiculo:') !!}</strong></td>
+                        <td><strong>{!! Form::label ($vehiculo->placa) !!}</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>{!! Form::label ('Kilometraje del vehiculo:') !!}</strong></td>
+                        <td><strong>{!! Form::label ($vehiculo->kilometraje) !!}</strong></td>
+                    </tr>
+                    <tr>
+                        <td> <strong>{!! Form::label ('Disponibilidad:') !!}</strong></td>
+                        <td>
+                            @if( $vehiculo->disponibilidad == 0)
+                                <span class="admin">No disponible</span>
+                            @else
+                                <span class="cliente">Disponible</span>
+                            @endif
+                        </td>
+                    </tr> 
+	   </tbody>
+    </table>
 <br>
-{!! $vehiculos -> render() !!}
+
 <br>
 <br>
 

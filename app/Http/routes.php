@@ -5,8 +5,10 @@
 | Application Routes
 |--------------------------------------------------------------------------
 |
-|Aca se encuentran las rutas que maneja laravel para poder realizar la navegacion 
-|entre las vistas y poder hacer uso de las funcionalidades de la aplicacion.
+| Here is where you can register all of the routes for an application.
+| It's a breeze. Simply tell Laravel the URIs it should respond to
+| and give it the controller to call when that URI is requested.
+|
 */
 
 Route::get('/', function(){
@@ -62,15 +64,43 @@ Route::group(['prefix' => '/admin'],function(){
 		'as'	=> 'vistas.admin.facturas.storeFactura'
 	]);
 
+	Route::get('pdf', [
+		'uses'	=> 'PdfController@generateReport',
+		'as'	=> 'admin.pdf.reporte'
+	]);
+
+	Route::get('pdf/{id}/factura', [
+		'uses'	=> 'PdfController@generateFactura',
+		'as'	=> 'admin.pdf.factura'
+	]);
+
 });
 
 Route::group(['prefix' => '/cliente'],function(){
 			
 	Route::resource('users', 'UsersController');
 
+	Route::resource('vehiculos', 'VehiculosController');
+
 	Route::resource('rentas', 'RentasController');
 
 	Route::resource('facturas', 'FacturasController');
+
+	Route::get('vehiculos', [
+		'uses' 	=> 'VehiculosController@clientesIndex',
+		'as'	=> 'cliente.vehiculos.clientesIndex'	
+	]);
+
+	Route::get('rentas', [
+		'uses' 	=> 'RentasController@rentasIndex',
+		'as'	=> 'cliente.rentas.rentasIndex'	
+	]);
+
+	Route::get('vehiculos/{id}/extra', [
+		'uses' 	=> 'VehiculosController@extra',
+		'as'	=> 'cliente.vehiculos.extra'	
+	]);
+
 
 });
 

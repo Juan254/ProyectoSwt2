@@ -159,6 +159,13 @@ ul.pagination li.active span {
     font:caption;
 }
 
+label, .dispo{
+    display: block;
+    height: 30px;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
 textarea{
     height: 170px;
     resize: vertical;

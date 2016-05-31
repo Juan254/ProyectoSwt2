@@ -12,6 +12,8 @@ use Laracasts\Flash\Flash;
 
 use App\Http\Requests\VehiculoRequest;
 
+use App\file;
+
 class VehiculosController extends Controller
 {
     public function index(){
@@ -24,6 +26,15 @@ class VehiculosController extends Controller
         }
     }
 
+    public function clientesIndex(){
+        $vehiculos = vehiculo::orderBy('id', 'ASC')->paginate(8);
+        return view('vistas.cliente.vehiculos.index')->with('vehiculos', $vehiculos);
+    }
+
+    public function extra($id){
+        $vehiculo = vehiculo::find($id);
+        return view('vistas.cliente.vehiculos.extra')->with('vehiculo', $vehiculo);
+    }
 
     public function create(){
     	return view('vistas.admin.vehiculos.create');
@@ -31,12 +42,21 @@ class VehiculosController extends Controller
 
     public function store(VehiculoRequest $request){
     
+        if ($request->file('Archivo')) {
     	$vehiculo = new vehiculo($request->all());
 		$vehiculo->disponibilidad = true;
         $vehiculo->precio_hora = $request->precio_hora;
 		$vehiculo->save();
-        Flash::success("El vehiculo se ha registrado existosamente.");
+        $file = $request->file('Archivo');
+        $name=$vehiculo->id .'.png';
+        $path = public_path(). '/images/vehiculos/';
+        $file->move($path,$name);
+        Flash::success('El vehiculo '. $vehiculo->placa  . ' ha sido creado con exito!');
         return redirect()->route('admin.vehiculos.index');
+        }else{
+            Flash::error('Debe de ingresar una foto del vehiculo');
+            return redirect()->route('admin.vehiculos.create');
+        }
     }
 
      /**
@@ -46,19 +66,30 @@ class VehiculosController extends Controller
      * @param  string  $id
      * @return Response
      */
-    public function update(Request $request, $id)
-    {
-        $vehiculo = vehiculo::find($id);
-        $vehiculo->color = $request->color;
-        $vehiculo->kilometraje = $request->kilometraje;
-        $vehiculo->precio_hora = $request->precio_hora;
-        $vehiculo->save();
-        Flash::warning('El vehiculo '. $vehiculo->placa  . ' ha sido editado con exito!');
-        return redirect()->route('admin.vehiculos.index');
+    public function update(request $request, $id){
+            if ($request->file('Archivo')) {
+            $vehiculo = vehiculo::find($id);
+            $vehiculo->color = $request->color;
+            $vehiculo->kilometraje = $request->kilometraje;
+            $vehiculo->precio_hora = $request->precio_hora;
+            $file1 = \File::delete(public_path(). '/images/vehiculos/'.$vehiculo->id.'.png');
+            $file = $request->file('Archivo');
+            $name=$vehiculo->id .'.png';
+            $path = public_path(). '/images/vehiculos/';
+            $file->move($path,$name);
+            $vehiculo->save();
+            Flash::warning('El vehiculo '. $vehiculo->placa  . ' ha sido editado con exito!');
+            return redirect()->route('admin.vehiculos.index');
+        }else{
+            Flash::error('Debe de ingresar una foto del vehiculo');
+            return redirect()->route('admin.vehiculos.edit');
+        }
+
     }
 
     public function destroy($id){
         $vehiculo = vehiculo::find($id);
+        $file = \File::delete(public_path(). '/images/vehiculos/'.$vehiculo->id.'.png');
         $vehiculo->delete();
 
         Flash::warning('El vehiculo '. $vehiculo->placa  . ' ha sido borrado de forma exitosa!');

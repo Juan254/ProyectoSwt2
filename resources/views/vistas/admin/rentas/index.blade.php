@@ -49,7 +49,7 @@
 					@if($renta->estado == 0)
 						<a  href="{{ route('vistas.admin.facturas.devolucion', $renta->id) }}"><img src="{{ asset ('recursos/imagenes/pago.png')}}"></a>
 					@else
-						<img src="{{ asset ('recursos/imagenes/facturar.png')}}">
+						<a  href="{{ route('admin.pdf.factura', $renta->id) }}"> <img src="{{ asset ('recursos/imagenes/facturar.png')}}"> </a>
 					@endif
 				</td>
 			</tr>

@@ -44,7 +44,9 @@ and open the template in the editor.
                         </div>
                     </li>
 
-                    <li><a> Generar Reportes </a></li>
+                    <li><a href="{{ route('admin.pdf.reporte') }}"> 
+                        Generar Reportes </a>
+                    </li>
                     <li>
                         <a href="{{ route('admin.users.index') }}" >
                                 Ver Listado de usuarios

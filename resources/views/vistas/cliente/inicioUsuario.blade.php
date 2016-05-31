@@ -34,17 +34,12 @@ and open the template in the editor.
 
 
                     <li>
-                        <a href="{{ route('cliente.rentas.index')}}" >
+                        <a href="{{ route('cliente.rentas.rentasIndex')}}" >
                                 Ver Listado mis rentas
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('cliente.facturas.index') }}" >
-                                Ver mis facturas
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('cliente.users.index') }}" >
+                        <a href="{{ route('cliente.vehiculos.clientesIndex') }}" >
                                 Ver Listado de vehiculos
                         </a>
                     </li>

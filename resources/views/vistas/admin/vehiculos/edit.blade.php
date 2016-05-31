@@ -5,7 +5,7 @@
 @section('content')
 	
 	
-	{!! Form::open(['route' => ['admin.vehiculos.update' , $vehiculo] , 'method' => 'PUT']) !!}
+	{!! Form::open(['route' => ['admin.vehiculos.update' , $vehiculo] , 'method' => 'PUT', 'files' => true]) !!}
 
 
 <br>
