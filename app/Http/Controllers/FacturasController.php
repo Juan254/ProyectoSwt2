@@ -22,7 +22,7 @@ class FacturasController extends Controller
     //
     public function devolucion($id){
         $solicitud_renta = solicitud_renta::find($id);
-        return view('vistas.admin.facturas')->with('solicitud_renta', $solicitud_renta);
+        return view('vistas.admin.facturas.create')->with('solicitud_renta', $solicitud_renta);
     }
 
     public function storeFactura(Request $request, $id){
