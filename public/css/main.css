@@ -1,0 +1,646 @@
+
+/* 
+    Created on : 15/05/2016, 03:50:21 PM
+    Author     : Juanda
+*/
+
+@font-face{
+    font-family: 'roboto';
+    src: url("/recursos/fuentes/Roboto-Thin.ttf"); 
+}
+
+* {
+    font-family: roboto, serif;
+}
+
+body {
+    width: 100%;
+    margin: 0px;
+
+}
+
+header {
+    height: 100px;
+    background: darkmagenta;
+}
+
+header>h1 {
+    color: white;
+
+}
+
+h1, h2 {
+    margin: 0px;
+    text-align: center;
+}
+
+button, input[type=submit], .button {
+    height: 35px;
+    border-radius: 4px;
+    border: 1px solid darkmagenta;
+    background: whitesmoke;
+    font:caption;
+}
+
+button:hover , input[type=submit]:hover, .button:hover{
+    cursor: pointer;
+    background: gainsboro;
+    transition: background-color .3s;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    height: 15px;
+    font:caption;
+}
+
+tr:hover {
+    background-color:#f5f5f5;
+}
+
+.button{
+    padding: 10px;
+    align-items: center;
+}
+
+.admin {
+    color: white;
+    background-color: #C54242;
+    border-radius: 3px;
+}
+
+.cliente {
+    color: white;
+    background-color: #46A25A;
+    border-radius: 3px;
+}
+
+.pagination{
+    width: 100%;
+}
+
+ul.pagination {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+ul.pagination li {display: inline;}
+
+ul.pagination li a, span {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+}
+
+ul.pagination li a:hover{
+    background-color: #B37DB3;
+    transition: background-color .3s;
+}
+
+
+ul.pagination li.active span {
+    background-color: #BD38BD;
+    color: white;
+    border: 1px solid #BD38BD;
+}
+/*---------------------------------HOME.HTML----------------------------------*/
+
+
+.home {
+    margin: 0px;    
+}
+
+.home>header{
+    height: 100px;
+    background: darkmagenta;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.home>header>h1 {
+    margin: 0px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.home>.contenido,
+.registrarDevolucion>.contenido{
+    width: 50%;
+    margin: auto;
+    margin-right: 15%;
+}
+
+.home>.contenido>form,
+.registrarDevolucion>.contenido>form{
+    width: 100%;
+}
+
+.home>.contenido>form>input, select, textarea,
+.crearVehiculo>div>.contenido>form>input,
+.registrarDevolucion>.contenido>form>input,
+.registrarDevolucion>.contenido>form>textarea{
+    display: block;
+    height: 30px;
+    border-radius: 4px;
+    border: 1px solid darkmagenta;
+    margin-bottom: 10px;
+    width: 100%;
+    font:caption;
+}
+
+textarea{
+    height: 170px;
+    resize: vertical;
+    max-height: 350px;
+
+}
+option {
+   font:caption; 
+   font-size: 15px;
+}
+
+.home>.contenido>form>button,
+.crearVehiculo>div>.contenido>form>button,
+.registrarDevolucion>.contenido>form>button, .button{
+    width: 100%;
+
+}
+
+/*---------------------------INICIOUSUARIO.HTML-------------------------------*/
+
+.inicioUsuario>header>.bienvenida,
+.detalleCarro>header>.bienvenida, 
+.crearVehiculo>header>.bienvenida,
+.registrarDevolucion>header>.bienvenida,
+.inicioAdmin>header>.bienvenida,
+.listaAutos>header>.bienvenida{
+    height: 100%;
+    color: white;
+    width:85%;
+    float: left;
+    vertical-align: central;
+}
+
+.inicioUsuario>header>.datosUsuario, 
+.detalleCarro>header>.datosUsuario,
+.crearVehiculo>header>.datosUsuario,
+.registrarDevolucion>header>.datosUsuario,
+.inicioAdmin>header>.datosUsuario,
+.listaAutos>header>.datosUsuario{
+    float: left;
+    width: 15%;
+    height: 100%;
+    background: beige;
+}
+
+.inicioUsuario>header>.datosUsuario>.foto, 
+.detalleCarro>header>.datosUsuario>.foto,
+.crearVehiculo>header>.datosUsuario>.foto,
+.registrarDevolucion>.datosUsuario>.foto,
+.inicioAdmin>header>.datosUsuario>.foto,
+.listaAutos>header>.datosUsuario>.foto{
+    height: 50%;
+}
+
+.inicioUsuario>header>.datosUsuario>.nombreUsuario,
+.detalleCarro>header>.datosUsuario>.nombreUsuario,
+.crearVehiculo>header>.datosUsuario>.nombreAdmin,
+.registrarDevolucion>header>.datosUsuario>.nombreAdmin,
+.inicioAdmin>header>.datosUsuario>.nombreAdmin,
+.listaAutos>header>.datosUsuario>.nombreAdmin{
+    height: 50%; 
+
+}
+
+.inicioUsuario>header>.datosUsuario>.nombreUsuario>p,
+.detalleCarro>header>.datosUsuario>.nombreUsuario>p,
+.crearVehiculo>header>.datosUsuario>.nombreAdmin>p,
+.registrarDevolucion>header>.datosUsuario>.nombreAdmin>p,
+.inicioAdmin>header>.datosUsuario>.nombreAdmin>p,
+.listaAutos>header>.datosUsuario>.nombreAdmin>p{
+    text-align: center; 
+}
+
+.inicioUsuario>.contenido, .detalleCarro>.contenido{
+    width: 69.9%;
+    margin: auto;
+    border: 1px solid darkmagenta;
+}
+
+.inicioUsuario>.contenido>h2,
+.detalleCarro>.contenido>h2,
+.crearVehiculo>div>.contenido>h2, 
+.registrarDevolucion>.contenido>h2 {
+    text-align: -webkit-center;
+}
+
+
+.inicioUsuario>.contenido>.fila {
+    height: 150px;
+}
+
+.inicioUsuario>.contenido>.fila:hover{
+    background: aliceblue;
+    cursor: pointer;
+}
+
+.inicioUsuario>.contenido>.fila>img {
+    height: 100%;
+    width: 20%;
+    /* border: 1px solid; */
+    float: left;
+}
+
+.inicioUsuario>.contenido>.fila>.descripcion {
+    float: right;
+    /* border: 1px solid; */
+    width: 79%;
+    height: 100%;
+}
+
+/*---------------------------DETALLECARRO.HTML--------------------------------*/
+
+.inicioUsuario>.contenido>h2,
+.detalleCarro>.contenido>h2,
+.crearVehiculo>div>.contenido>h2,
+.registrarDevolucion>.contenido>h2,
+.inicioAdmin>div>.contenido>h2,
+.listaAutos>div>.contenido>h2{
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.detalleCarro>.contenido>.infoCarro {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 20px;
+}
+
+.detalleCarro>.contenido>.infoCarro>.foto {
+    width: 61%;
+    height: 100%;
+}
+
+.detalleCarro>.contenido>.infoCarro>.descripcion {
+    width: 35%;
+    float: right;
+    height: 100%;
+    padding: 10px;
+    font-size: 23px;
+}
+
+.detalleCarro>.contenido>button {
+    width: 40%;
+    margin-left: 29%;
+    margin-right: 29%;
+}
+
+/*---------------------------CREARVEHICULO.HTML--------------------------------*/
+
+
+
+.crearVehiculo {
+    height: 520px;
+}
+
+.crearVehiculo>div {
+        height: 100%;
+}
+
+.crearVehiculo>div>nav>ul>li>a:-webkit-any-link{
+    text-decoration: none;
+    color:black;
+}
+
+.crearVehiculo>div>.contenido {
+    width: 72%;
+    margin: auto;
+    float: right;
+    
+}
+
+.crearVehiculo>div>.contenido>form {
+    width: 50%;
+    margin: auto;
+}
+
+.crearVehiculo>div>.contenido>form>label {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+    font:caption;
+}
+
+.crearVehiculo>div>.contenido>form>label>input {
+    float: right;
+}
+
+/*------------------------REGISTRARDEVOLUCION.HTML----------------------------*/
+
+.registrarDevolucion>.contenido>form>textarea {
+    height: 100px;
+}
+
+/*-----------------INICIOADMIN.HTML, LISTAAUTOS.HTML--------------------------*/
+
+
+.inicioAdmin>div>nav,
+.listaAutos>div>nav,
+.crearVehiculo>div>nav{
+    position: absolute;
+    width: 25%;
+    float: left;
+    background: beige;
+    height: 100%;
+}
+
+
+.crearVehiculo>div>nav{
+    height: 521px;
+}
+
+.inicioAdmin>div>nav>ul,
+.listaAutos>div>nav>ul,
+.crearVehiculo>div>nav>ul{
+    text-decoration: none;
+    list-style: none;
+    margin: auto 0px;
+    padding: 0px;
+}
+
+.inicioAdmin>div>nav>ul>li,
+.listaAutos>div>nav>ul>li,
+.crearVehiculo>div>nav>ul>li{
+    text-decoration: none;
+    padding: 15px;
+    margin: auto;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+}
+
+.inicioAdmin>div>nav>ul>li>.contenidoGestionarCarros,
+.listaAutos>div>nav>ul>li>.contenidoGestionarCarros,
+.crearVehiculo>div>nav>ul>li>.contenidoGestionarCarros{
+    display: none;
+    position: absolute;
+    width: 100%;
+    margin-left: 96%;
+    margin-top: -10.8%;
+    background: beige;
+
+    
+}
+
+.inicioAdmin>div>nav>ul>li>.contenidoGestionarCarros>a,
+.listaAutos>div>nav>ul>li>.contenidoGestionarCarros>a,
+.crearVehiculo>div>nav>ul>li>.contenidoGestionarCarros>a{
+    display: block;
+    padding: 15px;
+    color: black;
+    text-decoration: none;
+}
+
+
+.inicioAdmin>div>nav>ul>li:hover,
+.inicioAdmin>div>nav>ul>li>.contenidoGestionarCarros>a:hover ,
+.listaAutos>div>nav>ul>li:hover,
+.listaAutos>div>nav>ul>li>.contenidoGestionarCarros>a:hover,
+.crearVehiculo>div>nav>ul>li:hover,
+.crearVehiculo>div>nav>ul>li>.contenidoGestionarCarros>a:hover{
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.inicioAdmin>div>nav>ul>.gestionarCarros:hover>.contenidoGestionarCarros,
+.listaAutos>div>nav>ul>.gestionarCarros:hover>.contenidoGestionarCarros,
+.crearVehiculo>div>nav>ul>.gestionarCarros:hover>.contenidoGestionarCarros{
+    display: block;
+    background: beige;
+    color: white;
+    cursor: pointer;
+}
+
+.inicioAdmin>div>.contenido,
+.listaAutos>div>.contenido{
+    float: right;
+    width: 72%;
+}
+
+.inicioAdmin>div>nav>ul>li>a:link,
+.inicioAdmin>div>nav>ul>li>a:visited
+{
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+.inicioAdmin>div>nav>ul>li:hover,
+.inicioAdmin>div>nav>ul>li>a:hover,
+.inicioAdmin>div>nav>ul>li>a:active{
+    color: white;
+    background-color: #555;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+.alert.alert-success {
+    background: #51BB51;
+    font: caption;
+    border: 2px solid whitesmoke;
+    color: whitesmoke;
+    border-top: 4px solid whitesmoke;
+    border-radius: 8px;
+}
+
+.alert.alert-danger {
+    background: #BB5151;
+    font: caption;
+    border: 2px solid whitesmoke;
+    color: whitesmoke;
+    border-top: 4px solid whitesmoke;
+    border-radius: 8px;
+}
+
+.alert.alert-warning {
+    background: khaki;
+    font: caption;
+    border: 2px solid whitesmoke;
+    color: peru;
+    border-top: 4px solid whitesmoke;
+    border-radius: 8px;
+}
+/*-----------------------------------------------------------------------------
+--------------------------RESPONSIVE DESIGN------------------------------------
+------------------------------------------------------------------------------*/
+
+@media only screen and  (max-width: 810px){
+
+    .inicioUsuario>header>.bienvenida {
+        width:70%;
+    }
+
+    .inicioUsuario>header>.datosUsuario {
+        width: 30%;
+
+    }
+
+    .inicioUsuario>.contenido {
+        width: 100%;
+    }
+
+    .inicioUsuario>.contenido>.fila {
+        height: 125px;
+    }
+
+    .inicioUsuario>.contenido>.fila>img {
+        height: 100%;
+        width: 30%;
+        /* border: 1px solid; */
+        float: left;
+    }
+
+    .inicioUsuario>.contenido>.fila>.descripcion {
+        float: right;
+        /* border: 1px solid; */
+        width: 69%;
+        height: 100%;
+    }
+
+}
+
+@media only screen and  (max-width: 450px){
+
+    .inicioUsuario>header>.bienvenida, 
+    .detalleCarro>header>.bienvenida{
+        width:50%;
+    }
+
+    .inicioUsuario>header>.datosUsuario,
+    .detalleCarro>header>.datosUsuario{
+        width: 50%;
+
+    }
+
+    .inicioUsuario>header>.bienvenida>h1 {
+        font-size: 25px;
+    }
+
+    .inicioUsuario>.contenido>.fila>img {
+        height: 100%;
+        width: 40%;
+        /* border: 1px solid; */
+        float: left;
+    }
+
+    .inicioUsuario>.contenido>.fila>.descripcion {
+        float: right;
+        /* border: 1px solid; */
+        width: 59%;
+        height: 100%;
+    }
+
+    .inicioUsuario>.contenido>.fila {
+        height: 100px;
+    }
+
+}
+
+/* Smartphones (portrait and landscape) --  --  --  --  -- - */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+    /* Styles */
+
+}
+
+/* Smartphones (landscape) --  --  --  --  -- - */
+@media only screen
+and (min-width : 321px) {
+    /* Styles */
+
+}
+
+/* Smartphones (portrait) --  --  --  --  -- - */
+@media only screen
+and (max-width : 320px) {
+    /* Styles */
+    .inicioUsuario>header, .detalleCarro>header {
+        display: none;
+    }
+}
+
+/* iPads (portrait and landscape) --  --  --  --  -- - */
+@media only screen and (max-width : 1024px) {
+    /* Styles */
+    .detalleCarro>.contenido {
+        width: 100%;
+        margin: 0;
+    }
+
+    .detalleCarro>.contenido>.infoCarro {
+        height: 700px;
+    }
+
+    .detalleCarro>.contenido>.infoCarro>.foto {
+        height: 60%;
+    }
+
+    .detalleCarro>.contenido>.infoCarro>.descripcion {
+        height: 40%;
+    }
+}
+
+/* iPads (landscape) --  --  --  --  -- - */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+    /* Styles */
+
+}
+
+/* iPads (portrait) --  --  --  --  -- - */
+@media only screen and (max-width : 768px) {
+    /* Styles */
+    .detalleCarro>.contenido>.infoCarro>.descripcion {
+        font-size: 20px;
+        display: block;
+        width: 90%;
+        float: none;
+        margin: auto;
+    }
+
+    .detalleCarro>.contenido>.infoCarro>.foto {
+        width: 100%;
+        display: block;
+    }
+
+    /* Desktops and laptops --  --  --  --  -- - */
+    @media only screen
+    and (min-width : 1224px) {
+        /* Styles */
+
+    }
+
+    /* Large screens --  --  --  --  -- - */
+    @media only screen
+    and (min-width : 1824px) {
+        /* Styles */
+
+    }
+
