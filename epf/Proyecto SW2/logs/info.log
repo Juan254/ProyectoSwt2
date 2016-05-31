@@ -1,0 +1,23 @@
+Info: : 3172 mini-second(s) publishing element DeliveryProcess:procesos[plugin\deliveryprocesses\procesos_4C7287B7.html]
+Info: DeliveryProcess:procesos: 3172 mini seconds publishing element
+Info: DeliveryProcess:procesos: 889 mini seconds publishing process specific layout data
+Info: Activity:realizar casos de uso: 577 mini seconds publishing element
+Info: Task:realizar_implementacion_de_casos_de_uso: 47 mini seconds publishing element
+Info: TaskDescriptor:realizar_implementacion_de_casos_de_uso: 47 mini seconds publishing element
+Info: Role:desarrollador: 124 mini seconds publishing element
+Info: RoleDescriptor:desarrollador: 16 mini seconds publishing element
+Info: Artifact:documento_caso_de_uso: 62 mini seconds publishing element
+Info: WorkProductDescriptor:documento_caso_de_uso: 16 mini seconds publishing element
+Info: Task:realizar_pruebas_de_caso_de_uso: 46 mini seconds publishing element
+Info: TaskDescriptor:realizar_pruebas_de_caso_de_uso: 16 mini seconds publishing element
+Info: Artifact:pruebas_de_caso_de_uso: 31 mini seconds publishing element
+Info: WorkProductDescriptor:pruebas_de_caso_de_uso: 16 mini seconds publishing element
+Info: Template:plantilla_documento_caso_de_uso: 577 mini seconds publishing element
+Info: Template:plantilla_documento_de_pruebas_de_caso_de_uso: 78 mini seconds publishing element
+Info: CustomCategory:Configuration free process view: 702 mini seconds publishing element
+Info: CustomCategory:Tasks: 15 mini seconds publishing element
+Info: CustomCategory:Roles: 15 mini seconds publishing element
+Info: CustomCategory:Work Products: 16 mini seconds publishing element
+Info: CustomCategory:Guidance: 31 mini seconds publishing element
+Info: CustomCategory:Processes: 16 mini seconds publishing element
+Info: : Publishing time: 0 minutes 15 seconds
